@@ -1,11 +1,11 @@
 FROM ubuntu:18.04
 
 # ARGUMENTS
-ARG SDK_MANAGER_VERSION=1.1.0-6343
+ARG SDK_MANAGER_VERSION=1.2.0-6738
 ARG SDK_MANAGER_DEB=sdkmanager_${SDK_MANAGER_VERSION}_amd64.deb
 
 # add new sudo user
-ENV USERNAME jetpack
+ENV USERNAME ytpc2020d
 ENV HOME /home/$USERNAME
 RUN useradd -m $USERNAME && \
         echo "$USERNAME:$USERNAME" | chpasswd && \
@@ -53,7 +53,7 @@ ENV LC_ALL en_US.UTF-8
 RUN echo 'debconf debconf/frontend select Noninteractive' | debconf-set-selections
 
 # install SDK Manager
-USER jetpack
+USER ytpc2020d
 COPY ${SDK_MANAGER_DEB} /home/${USERNAME}/
 WORKDIR /home/${USERNAME}
 RUN sudo apt-get install -f /home/${USERNAME}/${SDK_MANAGER_DEB}
