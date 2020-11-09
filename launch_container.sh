@@ -9,6 +9,7 @@ docker run --privileged --rm -it \
            --volume=$XSOCK:$XSOCK:rw \
            --volume=$XAUTH:$XAUTH:rw \
            --volume=/dev:/dev:rw \
+           -v "/$(pwd)/nvidia:/nvidia/" \
            --shm-size=1gb \
            --env="XAUTHORITY=${XAUTH}" \
            --env="DISPLAY=${DISPLAY}" \

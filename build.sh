@@ -1,1 +1,1 @@
-docker build --build-arg SDK_MANAGER_VERSION=1.0.1-5538 -t jetpack .
+docker build --build-arg SDK_MANAGER_VERSION=1.3.1-7110 -t jetpack .
